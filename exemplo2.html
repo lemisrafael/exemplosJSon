@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<h2>Criando Objeto apartir de uma String JSON</h2>
+
+		<p id="demo"></p>
+
+		<script>
+			var text = '{"employees":[' +
+					   		'{"firstName":"John","lastName":"Doe" },' +
+					   		'{"firstName":"Anna","lastName":"Smith" },' +
+					   		'{"firstName":"Peter","lastName":"Jones" }' +
+					   	']}';
+
+			obj = JSON.parse(text);
+			document.getElementById("demo").innerHTML = obj.employees[1].firstName + " " + obj.employees[1].lastName;
+
+			// navegadores antigos, sem suporte ao 'JSON.parse(), podem usar a a função eval() para converter o texto JSON em um objeto javascript '
+			var obj = eval ("(" + text + ")");
+		</script>
+
+	</body>
+</html>
